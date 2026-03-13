@@ -1,0 +1,18 @@
+{
+  "name": "@hackathonweekly/skills",
+  "version": "1.0.0",
+  "description": "HackathonWeekly AI Skills Collection",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackathonweekly/skill.git"
+  },
+  "keywords": [
+    "ai",
+    "skills",
+    "hackathon",
+    "poster",
+    "design"
+  ],
+  "author": "HackathonWeekly",
+  "license": "MIT"
+}
