@@ -19,9 +19,13 @@ Use this skill when the user wants to:
    - Speakers/guests (name, title, description)
    - Event description
    - Schedule/agenda
-   - QR code or registration info
+   - Registration URL (will be converted to QR code)
 
-2. **Generate 2 HTML Previews**: Create two HTML files with different styles:
+2. **Generate QR Code**: If a registration URL is provided, generate a QR code using an online API:
+   - Use `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={URL}` to generate QR code
+   - Embed the QR code image in the HTML
+
+3. **Generate 2 HTML Previews**: Create two HTML files with different styles:
    - `style1-minimalist.html` - Black-white minimalist brutalist design
    - `style2-brutalist.html` - Bold brutalist modern design
 
@@ -62,9 +66,18 @@ The skill includes HackathonWeekly logos in the `assets/` folder:
 
 ### HTML Generation
 - Use inline CSS for portability
-- Embed base64 images or use local file paths
+- For QR codes: Use `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={encoded_url}` as img src
 - Set fixed dimensions (1080x1440px for poster, 900x383px for header)
 - Use web-safe fonts with fallbacks
+
+### QR Code Generation
+When a registration URL is provided:
+```html
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fexample.com%2Fevent"
+     alt="Registration QR Code"
+     style="width: 140px; height: 140px; border-radius: 16px;">
+```
+Make sure to URL-encode the registration link.
 
 ### PNG Conversion
 Use the `html2png` skill or Playwright to convert HTML to PNG:
@@ -75,17 +88,18 @@ npx @anthropic-ai/html2png input.html output.png --width 1080 --height 1440
 
 ## Example Usage
 
-**User**: "Create a poster for our OpenClaw meetup on March 15th at 7pm in Shenzhen"
+**User**: "Create a poster for our OpenClaw meetup on March 15th at 7pm in Shenzhen. Registration link: https://example.com/register"
 
 **Assistant**:
-1. Extracts event details
-2. Generates 2 HTML files with different styles
-3. Outputs: "I've created 2 poster designs. Please open these files in your browser to review:
+1. Extracts event details and registration URL
+2. Generates QR code from the URL
+3. Generates 2 HTML files with different styles, each containing the QR code
+4. Outputs: "I've created 2 poster designs with QR code for registration. Please open these files in your browser to review:
    - style1-minimalist.html
    - style2-brutalist.html
 
    Let me know which style you prefer or if you'd like any adjustments!"
-4. After user approval, converts to PNG in both sizes
+5. After user approval, converts to PNG in both sizes
 
 ## Output Files
 
@@ -96,8 +110,9 @@ For each approved style, generate:
 
 ## Notes
 
-- Always generate all 3 styles initially unless user specifies otherwise
+- Always generate both styles initially unless user specifies otherwise
+- If user provides a registration URL, automatically convert it to a QR code
 - Keep Chinese text readable with appropriate font sizes (min 24px)
-- Ensure QR codes are large enough to scan (min 200x200px)
+- QR codes should be at least 140x140px for easy scanning
 - Test color contrast for accessibility
 - Use the HackathonWeekly logo prominently in all designs
