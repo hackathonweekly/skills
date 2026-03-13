@@ -5,7 +5,7 @@ A collection of AI skills for the HackathonWeekly community.
 ## Installation
 
 ```bash
-npx skills add hackathonweekly/skill
+npx skills add hackathonweekly/skills
 ```
 
 ## Available Skills
@@ -17,7 +17,6 @@ Generate beautiful event posters in three distinct styles.
 **Usage**: Ask Claude to create a poster for your event, and it will generate 3 design options for you to choose from.
 
 **Styles**:
-- Blue-Purple Gradient: Modern, vibrant design
 - Black-White Minimalist: Clean, brutalist aesthetic
 - Brutalist Modern: Bold, experimental layout
 

@@ -21,10 +21,9 @@ Use this skill when the user wants to:
    - Schedule/agenda
    - QR code or registration info
 
-2. **Generate 3 HTML Previews**: Create three HTML files with different styles:
-   - `style1-blue-purple.html` - Blue-purple gradient with modern design
-   - `style2-minimalist.html` - Black-white minimalist brutalist design
-   - `style3-brutalist.html` - Bold brutalist modern design
+2. **Generate 2 HTML Previews**: Create two HTML files with different styles:
+   - `style1-minimalist.html` - Black-white minimalist brutalist design
+   - `style2-brutalist.html` - Bold brutalist modern design
 
 3. **User Review**: Output the HTML file paths and ask the user to open them in a browser to review.
 
@@ -36,14 +35,7 @@ Use this skill when the user wants to:
 
 ## Style Guidelines
 
-### Style 1: Blue-Purple Gradient
-- Background: Linear gradient from blue (#4F46E5) to purple (#9333EA)
-- Typography: Clean, modern sans-serif (Inter, SF Pro)
-- Layout: Centered content with ample white space
-- Accent: Yellow highlights (#FCD34D) for important info
-- Visual elements: Subtle geometric shapes, soft shadows
-
-### Style 2: Black-White Minimalist
+### Style 1: Black-White Minimalist
 - Background: White (#FFFFFF)
 - Typography: Bold, uppercase headings; clean body text
 - Layout: Grid-based, brutalist aesthetic
@@ -51,7 +43,7 @@ Use this skill when the user wants to:
 - Accent: None - pure black and white
 - Visual elements: Strong geometric shapes, hard edges
 
-### Style 3: Brutalist Modern
+### Style 2: Brutalist Modern
 - Background: Dark (#1A1A1A) or bold colors
 - Typography: Mixed weights, experimental layouts
 - Layout: Asymmetric, overlapping elements
@@ -87,11 +79,10 @@ npx @anthropic-ai/html2png input.html output.png --width 1080 --height 1440
 
 **Assistant**:
 1. Extracts event details
-2. Generates 3 HTML files with different styles
-3. Outputs: "I've created 3 poster designs. Please open these files in your browser to review:
-   - style1-blue-purple.html
-   - style2-minimalist.html
-   - style3-brutalist.html
+2. Generates 2 HTML files with different styles
+3. Outputs: "I've created 2 poster designs. Please open these files in your browser to review:
+   - style1-minimalist.html
+   - style2-brutalist.html
 
    Let me know which style you prefer or if you'd like any adjustments!"
 4. After user approval, converts to PNG in both sizes

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深圳OpenClaw🦞龙虾家长会｜第三期</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', 'PingFang SC', -apple-system, sans-serif;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.poster {
+  width: 1080px;
+  height: 1440px;
+  background: white;
+  position: relative;
+  border: 8px solid black;
+  box-shadow: 30px 30px 0 black;
+}
+
+.content {
+  padding: 60px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  border-bottom: 8px solid black;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.date-box {
+  border: 6px solid black;
+  padding: 16px 24px;
+  text-align: center;
+  background: white;
+}
+
+.date-box .date {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.date-box .day {
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+/* Title */
+.title-section {
+  margin-bottom: 40px;
+}
+
+.event-title {
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  letter-spacing: -3px;
+}
+
+.episode {
+  display: inline-block;
+  background: black;
+  color: white;
+  padding: 8px 20px;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.3;
+  border-left: 8px solid black;
+  padding-left: 24px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.info-card {
+  border: 4px solid black;
+  padding: 24px;
+  background: white;
+}
+
+.info-label {
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.info-value {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Speakers */
+.speakers-section {
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.speaker-item {
+  border: 4px solid black;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  background: white;
+}
+
+.speaker-item.highlight {
+  background: black;
+  color: white;
+}
+
+.speaker-name {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.speaker-topic {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Footer */
+.footer {
+  border-top: 8px solid black;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.organizer {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.organizer-name {
+  font-size: 36px;
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+.qr-box {
+  width: 140px;
+  height: 140px;
+  border: 6px solid black;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <div class="content">
+
+    <div class="header">
+      <div class="logo-text">HACKATHON<br>WEEKLY</div>
+      <div class="date-box">
+        <div class="date">03.15</div>
+        <div class="day">SAT</div>
+      </div>
+    </div>
+
+    <div class="title-section">
+      <div class="episode">第三期</div>
+      <h1 class="event-title">深圳<br>OPENCLAW🦞<br>龙虾家长会</h1>
+      <div class="subtitle">内容创作、企业破局<br>与安全边界</div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">时间</div>
+        <div class="info-value">3月15日（周六）<br>19:00 - 21:30</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">地点</div>
+        <div class="info-value">深圳后海<br>阿里中心 T3</div>
+      </div>
+    </div>
+
+    <div class="speakers-section">
+      <h2 class="section-title">嘉宾阵容</h2>
+
+      <div class="speaker-item">
+        <div class="speaker-name">HAYLEY</div>
+        <div class="speaker-topic">内容创作者/媒体人怎么用 OpenClaw</div>
+      </div>
+
+      <div class="speaker-item">
+        <div class="speaker-name">EGO</div>
+        <div class="speaker-topic">传统企业/传统行业怎么用 OpenClaw 破局</div>
+      </div>
+
+      <div class="speaker-item">
+        <div class="speaker-name">KEVIN</div>
+        <div class="speaker-topic">OpenClaw 的应用价值与安全边界</div>
+      </div>
+
+      <div class="speaker-item highlight">
+        <div class="speaker-name">🎯 圆桌对谈（重点）</div>
+        <div class="speaker-topic">安全性专题回应：OpenClaw 到底该怎么安全养？<br>主持：易小婧（香港商报《岁月婧好》工作室主理人）</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="organizer">
+        <div>主办方</div>
+        <div class="organizer-name">周周黑客松深圳</div>
+      </div>
+      <div class="qr-box">
+        扫码<br>报名
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
