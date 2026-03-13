@@ -21,9 +21,10 @@ Use this skill when the user wants to:
    - Schedule/agenda
    - Registration URL (will be converted to QR code)
 
-2. **Generate QR Code**: If a registration URL is provided, generate a QR code using an online API:
-   - Use `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={URL}` to generate QR code
-   - Embed the QR code image in the HTML
+2. **Generate QR Code**: If a registration URL is provided, use qrcode.js library to generate QR code directly in the browser:
+   - Include qrcode.js from CDN: `https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js`
+   - Generate QR code using JavaScript when the page loads
+   - No external API dependency, works offline
 
 3. **Generate 2 HTML Previews**: Create two HTML files with different styles:
    - `style1-minimalist.html` - Black-white minimalist brutalist design
@@ -66,18 +67,29 @@ The skill includes HackathonWeekly logos in the `assets/` folder:
 
 ### HTML Generation
 - Use inline CSS for portability
-- For QR codes: Use `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={encoded_url}` as img src
+- For QR codes: Use qrcode.js library from CDN to generate QR codes in the browser
 - Set fixed dimensions (1080x1440px for poster, 900x383px for header)
 - Use web-safe fonts with fallbacks
 
 ### QR Code Generation
-When a registration URL is provided:
+When a registration URL is provided, use qrcode.js library to generate QR code in the browser:
 ```html
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fexample.com%2Fevent"
-     alt="Registration QR Code"
-     style="width: 140px; height: 140px; border-radius: 16px;">
+<!-- Include qrcode.js from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- QR code container -->
+<div id="qrcode"></div>
+
+<!-- Generate QR code -->
+<script>
+new QRCode(document.getElementById("qrcode"), {
+  text: "https://example.com/register",
+  width: 140,
+  height: 140
+});
+</script>
 ```
-Make sure to URL-encode the registration link.
+This approach works offline and doesn't depend on external APIs.
 
 ### PNG Conversion
 Use the `html2png` skill or Playwright to convert HTML to PNG:
